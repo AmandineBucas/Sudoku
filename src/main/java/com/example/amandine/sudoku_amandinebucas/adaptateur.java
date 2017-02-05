@@ -69,16 +69,11 @@ public class adaptateur extends BaseAdapter {
         }
 
         /*** Si le résultat est inférieur à 40, le pourcentage sera en rouge ***/
-     /*   if (meslistes.get(position).getPourcentage() < 40)
-            text2.setTextColor(Color.RED);
+        if (maListe.get(position).getPourcentage() < 50)
+            vue.textPourcentage.setTextColor(Color.RED);
         /** Sinon, il sera affiché en vert **/
-    /*    else
-            text2.setTextColor(Color.GREEN);
-
-        /********** Change le style de l'écriture avec le font "Munro" ***********/
-        /*Typeface typeface = Typeface.createFromAsset(contexte.getAssets(), "fonts/Munro.ttf");
-        textPourcentage.setTypeface(typeface);*/
-
+            else
+            vue.textPourcentage.setTextColor(Color.GREEN);
 
         /********* Récupération de l'objet *********/
         listeGrille Grille = (listeGrille) getItem(position);
@@ -88,6 +83,10 @@ public class adaptateur extends BaseAdapter {
         vue.textNumero.setText(String.valueOf("Niveau° "+Grille.getNiveau()+" - Grille : "+ Grille.getNumero()));
         vue.textPourcentage.setText(String.valueOf(Grille.getPourcentage()+"%"));
 
+        /********** Change le style de l'écriture avec le font "Munro" ***********/
+        Typeface typeface = Typeface.createFromAsset(contexte.getAssets(), "fonts/Munro.ttf");
+        vue.textPourcentage.setTypeface(typeface);
+
         return convertView;
     }
 }
@@ -96,5 +95,4 @@ class VuePorteuse{
     public TextView textNumero;
     public TextView textPourcentage;
 }
-
 
