@@ -7,12 +7,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="numero"
+        android:textSize="25dp"
         android:id="@+id/numeroniveau" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="pourcentage"
+        android:textSize="20dp"
         android:id="@+id/pourcentage" />
 
 </LinearLayout>
