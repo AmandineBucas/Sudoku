@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#CD853F"
+    tools:context="com.example.amandine.sudoku_amandinebucas.main">
+
+    <!--- TEXTVIEW -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SUDOKU"
+        android:layout_above="@+id/niveau1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="83dp"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        android:id="@+id/textView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Amandine BUCAS"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:id="@+id/textView2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choississez votre niveau"
+        android:layout_marginBottom="13dp"
+        android:textSize="20dp"
+        android:id="@+id/textView3"
+        android:layout_above="@+id/niveau1"
+        android:layout_centerHorizontal="true" />
+
+    <!--- BOUTONS DE CHOIX DE NIVEAU -->
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="NIVEAU 3"
+        android:background="#C8AD7F"
+        android:onClick="boutonniveau3"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_marginTop="61dp"
+        android:id="@+id/niveau3"
+        android:layout_below="@+id/niveau1"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/niveau1"
+        android:text="NIVEAU 1"
+        android:background="#C8AD7F"
+        android:onClick="boutonniveau1"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_marginBottom="15dp"
+        android:elevation="0dp"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_above="@+id/niveau2"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="NIVEAU 2"
+        android:id="@+id/niveau2"
+        android:layout_marginBottom="143dp"
+        android:background="#C8AD7F"
+        android:onClick="boutonniveau2"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_above="@+id/textView2"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>
