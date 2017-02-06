@@ -34,11 +34,18 @@ public class grilleSudoku extends AppCompatActivity {
 
         dessin.creationGrille(grille);
 
+        /*** Extinction du chronomètre ***/
+        stopChronometer(findViewById(R.id.chronometer2));
     }
 
-    /****************************** METHODE STARTCHRONOMETRE *******************************/
+    /****************************** METHODE STARTCHRONOMETER *******************************/
     public void startChronometre(View view){
         ((Chronometer)findViewById(R.id.chronometer2)).start();
+    }
+
+    /****************************** METHODE STOPCHRONOMETER *******************************/
+    public void stopChronometer(View view){
+        ((Chronometer)findViewById(R.id.chronometer2)).stop();
     }
 
     /****************************** METHODE HIDETOPBAR *******************************/
