@@ -5,56 +5,63 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Chronometer;
 
 public class grilleSudoku extends AppCompatActivity {
+
+    /*** Génération d'une grille de 81 cases ***/
+    int[][] grille = new int[9][9];
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grille_sudoku);
 
+        /*** Démarrage du chronomètre ***/
+        startChronometre(findViewById(R.id.chronometer2));
+
+        String maGrille = (String) this.getIntent().getExtras().get("grille");
+        int cpt = 0;
+        for (int i = 0; i < 9; i++){
+            for (int j = 0; j < 9; j++){
+                grille[j][i] = Integer.parseInt(""+maGrille.charAt(cpt));
+                cpt++;
+
+            }
+        }
+
+        dessin dessin = (dessin) findViewById(R.id.dessin);
+
+        dessin.creationGrille(grille);
+
     }
 
-    /**********************************
-     * METHODE ONDRAW
-     **********************************/
-    public void onDraw(Canvas canvas){
-        Paint dessin = new Paint();
+    /****************************** METHODE STARTCHRONOMETRE *******************************/
+    public void startChronometre(View view){
+        ((Chronometer)findViewById(R.id.chronometer2)).start();
+    }
 
-        /************** Couleur des bordures ***************/
-        dessin.setColor(Color.BLACK);
+    /****************************** METHODE HIDETOPBAR *******************************/
+    public void hideTopBar() {
 
-        /************ Lignes **************/
-        dessin.setStrokeWidth(5);
-        canvas.drawLine(50, 50, 950, 50, dessin);
-        canvas.drawLine(50, 150, 950, 150, dessin);
-        canvas.drawLine(50, 250, 950, 250, dessin);
-        dessin.setStrokeWidth(10);
-        canvas.drawLine(50, 350, 950, 350, dessin);
-        dessin.setStrokeWidth(5);
-        canvas.drawLine(50, 450, 950, 450, dessin);
-        canvas.drawLine(50, 550, 950, 550, dessin);
-        dessin.setStrokeWidth(10);
-        canvas.drawLine(50, 650, 950, 650, dessin);
-        dessin.setStrokeWidth(5);
-        canvas.drawLine(50, 750, 950, 750, dessin);
-        canvas.drawLine(50, 850, 950, 850, dessin);
-        canvas.drawLine(50, 950, 950, 950, dessin);
+        /**** Supprime la barre du haut *****/
+        View aView = getWindow().getDecorView();
+        aView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+    }
 
-        /************ Lignes **************/
-        canvas.drawLine(50, 50, 50, 950, dessin);
-        canvas.drawLine(150, 50, 150, 950, dessin);
-        canvas.drawLine(250, 50, 250, 950, dessin);
-        dessin.setStrokeWidth(10);
-        canvas.drawLine(350, 50, 350, 950, dessin);
-        dessin.setStrokeWidth(5);
-        canvas.drawLine(450, 50, 450, 950, dessin);
-        canvas.drawLine(550, 50, 550, 950, dessin);
-        dessin.setStrokeWidth(10);
-        canvas.drawLine(650, 50, 650, 950, dessin);
-        dessin.setStrokeWidth(5);
-        canvas.drawLine(750, 50, 750, 950, dessin);
-        canvas.drawLine(850, 50, 850, 950, dessin);
-        canvas.drawLine(950, 50, 950, 950, dessin);
+    /****************************** METHODE ONRESUME *********************************/
+    public void onResume() {
+        super.onResume();
+
+        /**** Cache la barre du haut avec appel de la méthode ****/
+        hideTopBar();
     }
 }
+
+
 
