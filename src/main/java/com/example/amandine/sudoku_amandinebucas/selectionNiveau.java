@@ -67,7 +67,7 @@ public class selectionNiveau extends AppCompatActivity{
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            
+
             /******* Ajoute la grille ********/
             grilles.add(new listeGrille(i, Integer.parseInt(niveau), 0, ligne));
             i++;
@@ -98,7 +98,7 @@ public class selectionNiveau extends AppCompatActivity{
                     }
                 });
 
-                /**** Permet de continuer la grille sélectionner, redirige vers la grille ****/
+                /**** Permet de continuer la grille sélectionnée, redirige vers la grille ****/
                 builder.setNegativeButton("Continuer la grille", new DialogInterface.OnClickListener() {
 
                     public void onClick(DialogInterface dialog, int which) {
