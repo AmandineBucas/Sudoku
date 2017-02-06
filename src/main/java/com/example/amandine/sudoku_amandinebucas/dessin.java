@@ -2,6 +2,7 @@ package com.example.amandine.sudoku_amandinebucas;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
@@ -78,6 +79,9 @@ public class dessin extends View implements View.OnTouchListener {
     protected void onDraw(Canvas canvas) {
         Paint dessiner = new Paint();
 
+        /*** Met en noir ***/
+        dessiner.setColor(Color.BLACK);
+
         for(int i = 1; i<= nbrcases; i++){
 
             if(i % 3 == 0){
@@ -112,4 +116,5 @@ public class dessin extends View implements View.OnTouchListener {
             }
         }
     }
+}
 }
