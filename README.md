@@ -8,8 +8,9 @@ PROJET SUDOKU
 <p> "adaptateur" -> changement du style de l'écriture des pourcentages (deviens rouge lorsque inférieur à 50% et vert pour le cas inverse)</p>
 <p> Lorsque l'on clique sur une des grilles de la liste, affichage d'un message d'informations indiquant le numéro de la grille et le pourcentage réalisé</p>
 <p> Création d'un fichier "raw" dans le fichier "res", avec insertion des fichiers txt contenant les différentes combinaisons de chiffres
-<p> TODOO : Réalisation de la grille - Création de la classe "grilleSudoku" </p>
-<p> TODOO : Gestion des évènements (ACTION_DOWN/MOVE/UP) </p>
+<p> Réalisation de la grille - Création de la classe "grilleSudoku" </p>
+<p> Gestion des évènements (ACTION_DOWN/MOVE/UP) </p>
+<p> Chronomètre sans thread - utilisation du widget </p>
 <p> TODOO : Chronomètre avec thread </p>
 <p> TODOO : Utilisation d'une base de données </p>
 <p> TODOO : Sauvegarde de l'avancement des parties </p>
